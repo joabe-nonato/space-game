@@ -1,19 +1,20 @@
 /*
-Aplicação: Space inavders
+Aplicação: space game
 Tippo: Shmups
 Autor: Joabe Nonato
-
-
 */
 
 import Player from "./classes/Player.js";
-import ProjectFiles from "./classes/ProjectFiles.js";
+import ProjectTiles from "./classes/ProjectTiles.js";
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
+
+ctx.imageSmoothingEnabled = false;
+
 
 const player = new Player(canvas.width, canvas.height);
 
@@ -23,7 +24,7 @@ const playerProjectiles = [];
 // player.position.x = (canvas.width / 2) - (player.width / 2);
 // player.position.y = canvas.height - player.height - 30;
 
-// const p = new ProjectFiles({x: 200, y: 400}, -1);
+// const p = new ProjectTiles({x: 200, y: 400}, -1);
 
 //AÇÂO
 const keys ={

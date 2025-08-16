@@ -1,4 +1,4 @@
-class ProjectFiles
+class ProjectTiles
 {
     constructor(position, velocity){
           
@@ -19,4 +19,4 @@ class ProjectFiles
 
 }
 
-export default ProjectFiles;
+export default ProjectTiles;
