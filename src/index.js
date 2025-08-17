@@ -4,8 +4,9 @@ Tippo: Shmups
 Autor: Joabe Nonato
 */
 
+import Invaders from "./classes/Invaders.js";
 import Player from "./classes/Player.js";
-import ProjectTiles from "./classes/ProjectTiles.js";
+// import ProjectTiles from "./classes/ProjectTiles.js";
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -25,6 +26,7 @@ const playerProjectiles = [];
 // player.position.y = canvas.height - player.height - 30;
 
 // const p = new ProjectTiles({x: 200, y: 400}, -1);
+const invader = new Invaders({x : (canvas.width / 2), y: 20 }, 10);
 
 //AÇÂO
 const keys ={
@@ -59,6 +61,8 @@ const clearProjectiles = () =>{
 const gameLoop = () =>{
     ctx.clearRect(0,0, canvas.width, canvas.height);
 
+    invader.draw(ctx);
+    
     // p.draw(ctx);
     // p.update();
     // console.log(player.position.y);
