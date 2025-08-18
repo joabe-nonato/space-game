@@ -39,6 +39,10 @@ getImage(path){
         this.position.y += this.velocity;
     }
 
+    moveDownLine(){
+        this.position.y += this.height;
+    }
+
 
     shoot(projectiles){
         const p = new ProjectTiles({

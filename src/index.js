@@ -4,7 +4,8 @@ Tippo: Shmups
 Autor: Joabe Nonato
 */
 
-import Invaders from "./classes/Invaders.js";
+// import Invaders from "./classes/Invaders.js";
+import Grid from "./classes/Grid.js";
 import Player from "./classes/Player.js";
 // import ProjectTiles from "./classes/ProjectTiles.js";
 
@@ -19,6 +20,8 @@ ctx.imageSmoothingEnabled = false;
 
 const player = new Player(canvas.width, canvas.height);
 
+const grid = new Grid(6, 3);
+
 const playerProjectiles = [];
 
 // // POSIÇÃO INICIAL
@@ -26,7 +29,7 @@ const playerProjectiles = [];
 // player.position.y = canvas.height - player.height - 30;
 
 // const p = new ProjectTiles({x: 200, y: 400}, -1);
-const invader = new Invaders({x : (canvas.width / 2), y: 20 }, 10);
+// const invader = new Invaders({x : (canvas.width / 2), y: 20 }, 10);
 
 //AÇÂO
 const keys ={
@@ -60,12 +63,12 @@ const clearProjectiles = () =>{
 //LOOPING DO JOGO: DESENHAR | RENDERIZAR
 const gameLoop = () =>{
     ctx.clearRect(0,0, canvas.width, canvas.height);
-
-    invader.draw(ctx);
-    
+    // invader.draw(ctx);    
     // p.draw(ctx);
     // p.update();
     // console.log(player.position.y);
+
+    
 
     if(keys.left && player.position.x > 0){
         player.moveLeft();
@@ -92,6 +95,8 @@ const gameLoop = () =>{
     drawProjectiles();
     clearProjectiles();
 
+    grid.draw(ctx);
+    // grid.update();
     player.draw(ctx);
 
     requestAnimationFrame(gameLoop);
